@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import io from 'socket.io-client';
 import axios from 'axios';
 
-const socket = io.connect('http://localhost:5000');
+const socket = io.connect('https://chat-application-api-murex.vercel.app/');
 
 const MessageForm = () => {
   const [username, setUsername] = useState('');
@@ -14,7 +14,7 @@ const MessageForm = () => {
     const newMessage = { username, message };
 
     // Send message to the server
-    await axios.post('http://localhost:5000/api/messages', newMessage);
+    await axios.post('https://chat-application-api-murex.vercel.app/api/messages', newMessage);
 
     // Emit message via Socket.IO
     socket.emit('chatMessage', newMessage);
