@@ -13,7 +13,7 @@ const Chat = () => {
   useEffect(() => {
     // Fetch initial messages from the server
     const fetchMessages = async () => {
-      const res = await axios.get('http://localhost:5000/api/messages');
+      const res = await axios.get('https://chat-application-api-murex.vercel.app/api/messages');
       setMessages(res.data.reverse());
     };
     fetchMessages();
