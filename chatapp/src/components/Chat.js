@@ -4,7 +4,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Chat.css'; // Import custom styles
 
-const socket = io.connect('http://localhost:5000');
+const socket = io.connect('https://chat-application-api-murex.vercel.app/');
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
